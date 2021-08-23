@@ -108,7 +108,8 @@ class TensorBoardOutputFormat(OutputFormat):
         self.tf = tensorflow
         self.event_pb2 = event_pb2
         self.pywrap_tensorflow = pywrap_tensorflow
-        self.writer = pywrap_tensorflow.EventsWriter(compat.as_bytes(path))
+        # self.writer = pywrap_tensorflow.EventsWriter(compat.as_bytes(path))
+        self.writer = tf.summary.create_file_writer(compat.as_bytes(path))
 
     def writekvs(self, kvs):
         def summary_val(k, v):
