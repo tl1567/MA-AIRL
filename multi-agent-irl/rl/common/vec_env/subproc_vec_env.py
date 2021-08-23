@@ -1,6 +1,6 @@
 import numpy as np
 from multiprocessing import Process, Pipe
-from baselines.common.vec_env import VecEnv, CloudpickleWrapper
+from stable_baselines3.common.vec_env import VecEnv, CloudpickleWrapper
 
 
 def worker(remote, env_fn_wrapper, is_multi_agent):
